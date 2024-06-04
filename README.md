@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Portfolio mk-2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio presentation image](./src/assets/images/lake_mountain_view.jpg)
 
-Currently, two official plugins are available:
+This application is my portfolio. In here, information about me and all projects I have done are present. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About my portfolio
 
-## Expanding the ESLint configuration
+This application illustrates what kind of person I am as well as what fields I specialize in and what I can do. But of course, this is only the portfolio at its earliest. In time, I plan to have different field sections the user can select to better sort the projects I make in the future. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+But enough about what will be done, now for the app itself. There are a few main sections the application currently contains: 
+- About me: This part is simply about me and what I do.
+- Projects: This part contains all the projects done so far.
 
-- Configure the top-level `parserOptions` property like this:
+## Build
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+This application is mainly build with the following js and css platforms:
+- React
+- Typescript
+- Tailwind
+
+There are no other platforms or tools unrelated to react currently used.
+
+## Getting started
+
+### Installing
+
+To install this project, follow these two steps:
+1. Clone repo
+```
+git clone https://github.com/AkselBF/portfolio_mk-2.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. install dependencies
+```
+npm install
+```
+
+### Run project
+
+To run the app, use the following command:
+```
+npm run dev
+```
+
+## Contact
+
+Here are different ways to contact me, should there be a need to.
+Phone and email:
+- Phone: +47 472 32 199
+- email: akse.boutrouefaret@yahoo.com
+
+Social links:
+- [My LinkedIn page](https://www.linkedin.com/in/aksel-boutroue-faret-20b451228/)
