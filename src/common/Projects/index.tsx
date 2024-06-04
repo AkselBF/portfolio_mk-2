@@ -5,7 +5,7 @@ import dropByDrop from '../../assets/images/dropByDrop.png';
 import dna from '../../assets/images/dna.png';
 import ecom from '../../assets/images/ecom.png';
 import science from '../../assets/images/museum_2.jpg';
-import '../Styles/ProjectScrollbar.css';
+import '../Styles/Scrollbars/ProjectScrollbar.css';
 
 const projects = [
   {
