@@ -1,6 +1,9 @@
 import React from 'react';
+import About from '../About';
+import Skills from '../Skills';
 import Projects from '../../Projects';
 import heroOne from '../../../assets/images/Westfjords sunset.jpg';
+import breakPoint from '../../../assets/images/break.png';
 import '../../Styles/Fonts/Ubuntu.css';
 import '../../Styles/General/Styles.css';
 
@@ -9,7 +12,7 @@ const Home: React.FC = () => {
     <div id="home" className="relative w-full min-h-screen overflow-x-hidden">
       {/* Hero section */}
       <div
-        className="relative h-[500px] xl:h-[738px] bg-cover bg-center mb-10"
+        className="relative h-[500px] xl:h-[738px] bg-cover bg-center"
         style={{ backgroundImage: `url(${heroOne})` }}
       >
         <div className="absolute inset-0 bg-black opacity-30"></div>
@@ -25,18 +28,19 @@ const Home: React.FC = () => {
 
       <div id='sections'>
         {/* About section */}
-        <section id="about" className="text-white mb-10">
-          <h2 className='ubuntu-bold text-white text-left text-2xl font-semibold ml-10 mb-1'>About Me</h2>
-          <div className='h-1 w-20 bg-[#75D6FF] rounded-r-full ml-10 mb-1'></div>
-          <div className='h-0.5 w-10 bg-[#75D6FF] rounded-r-full ml-10 mb-6'></div>
-          <p>Information about you...</p>
+        <section id="about" className="text-white">
+          <About />
         </section>
 
         {/* Skills section */}
-        <section id="skills" className="text-white mb-10">
-          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-6'>Skills</h2>
-          <p>List of skills...</p>
+        <section id="skills" className="text-white">
+          <Skills />
         </section>
+
+        <div
+        className="w-full h-[360px] cover"
+        style={{ backgroundImage: `url(${breakPoint})` }}
+        ></div>
 
         {/* Projects section */}
         <section id="projects" className="text-white mb-10">
@@ -45,6 +49,11 @@ const Home: React.FC = () => {
             <Projects />
           </div>
         </section>
+
+        <div
+        className="w-full h-[360px] cover"
+        style={{ backgroundImage: `url(${breakPoint})` }}
+        ></div>
 
         {/* Contact section */}
         <section id="contact" className="text-white mb-10">

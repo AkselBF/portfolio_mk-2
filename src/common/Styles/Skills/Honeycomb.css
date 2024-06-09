@@ -1,0 +1,58 @@
+/* Custom styles for the hexagonal layout */
+.hexagon-wrapper {
+  /*width: 104px; /* Adjust this width to ensure proper spacing */
+  height: 200px; /* Adjust height to fit the hexagon aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagon {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  background-color: #1260BC;
+  clip-path: polygon(
+    25% 0%, 
+    75% 0%, 
+    100% 50%, 
+    75% 100%, 
+    25% 100%, 
+    0% 50%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.hexagon-icon {
+  width: 40px;
+  height: 40px;
+  color: #75D6FF;
+}
+
+.hexagon-text {
+  margin-top: 2px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Flexbox adjustments for honeycomb effect */
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -14.43px 0;
+}
+
+.hexagon-wrapper:nth-child(odd) {
+  margin-top: 28.87px; /* Move odd rows down to create staggered layout */
+}
+
+.hexagon-wrapper:nth-child(even) {
+  margin-top: 0; /* Even rows remain at the same level */
+}
