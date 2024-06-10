@@ -4,6 +4,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import BuildIcon from '@mui/icons-material/Build';
 import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { useLocation } from 'react-router-dom';
 import '../../Styles/Navigation/Navigation.css';
 
 const sections = [
@@ -15,6 +16,13 @@ const sections = [
 ];
 
 const Navigation: React.FC = () => {
+  const location = useLocation();
+
+  // Only render navigation if the current path is home
+  if (location.pathname !== '/') {
+    return null;
+  }
+
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -24,7 +32,7 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className="fixed right-5 top-1/2 transform -translate-y-1/2 flex flex-col items-center bg-opacity-50 bg-gray-800 p-4 rounded-l-lg z-50">
-      {sections.map(section => ( 
+      {sections.map(section => (
         <button
           key={section.id}
           onClick={() => handleScroll(section.id)}
