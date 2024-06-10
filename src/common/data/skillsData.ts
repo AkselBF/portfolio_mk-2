@@ -12,6 +12,7 @@ export const skillsData = {
   ],
   Backend: [],
   Design: [
-    { name: "Photoshop", icon: ColorLensIcon },
+    { name: "Paint", icon: ColorLensIcon },
+    { name: "Paint", icon: ColorLensIcon },
   ],
 };

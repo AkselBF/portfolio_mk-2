@@ -15,7 +15,7 @@ const Home: React.FC = () => {
     <div id="home" className="relative w-full min-h-screen overflow-x-hidden">
       {/* Hero section */}
       <div
-        className="relative h-[500px] xl:h-[738px] bg-cover bg-center"
+        className="relative h-[500px] xl:h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${heroOne})` }}
       >
         <div className="absolute inset-0 bg-black opacity-30"></div>
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
 
         {/* Projects section */}
         <section id="projects" className="text-white mb-10">
-          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-6'>My projects</h2>
+          <h2 className='ubuntu-bold text-white text-2xl font-semibold pt-6 mb-6'>My projects</h2>
           <div id='side' className="container mx-auto sm:p-4">
             <Projects />
           </div>
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
 
         {/* Contact section */}
         <section id="contact" className="text-white mb-12">
-          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-10'>Contact</h2>
+          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-10'>Contact me</h2>
           <Contact />
         </section>
 

@@ -72,7 +72,7 @@ const Skills: React.FC = () => {
             <div className={`relative bg-[#152B44] p-4 rounded-l-lg flex-1 w-full max-w-4xl overflow-hidden transition-all duration-500 ${showSkills ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
               {/* Triangular cutout on the left side */}
               <div className="absolute left-0 top-0 h-full w-1/3 transform -skew-x-12 bg-[#152B44]"></div>
-              <div className={`relative z-10 flex flex-wrap justify-center ${showSkills ? 'block' : 'hidden'}`}>
+              <div className={`relative z-10 flex flex-wrap ${showSkills ? 'block' : 'hidden'}`}>
                 <SkillsSet skills={skillsData[selectedCategory]} />
               </div>
             </div>

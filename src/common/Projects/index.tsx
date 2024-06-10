@@ -52,7 +52,7 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <div className="projects-list flex flex-row overflow-x-auto mx-3 mb-5">
+    <div className="projects-list flex flex-row overflow-x-auto mr-3 ml-16 mb-5 md:grid md:grid-cols-1 md:overflow-x-hidden md:mr-0 md:ml-[28%] lg:mx-auto lg:gap-4 md:flex-col lg:grid-cols-2 xl:grid-cols-3">
       {projects.map(project => (
         <ProjectCard key={project.id} project={project} />
       ))}

@@ -15,13 +15,19 @@ const About: React.FC = () => {
         <div className="bg-gradient-to-b from-[#051120] to-[#152B44] border-2 border-[#75D6FF] rounded-lg shadow-lg p-6 xl:ml-12 max-w-md w-full text-white">
           <img src={profileImage} alt="Profile" className="w-28 h-36 rounded-full mx-auto shadow-lg mb-4"/>
           <h1 className="text-[#75D6FF] text-3xl ubuntu-bold text-center mb-2">Aksel</h1>
-          <p className="text-center mb-4">A passionate front-end developer with a focus on creating visually appealing and user-friendly interfaces. I specialize in React, TypeScript, and TailwindCSS, striving to deliver the best possible user experience through modern web technologies.</p>
-          <div className="text-center mb-4">
-            <p>Email: aksel.boutrouefaret@yahoo.com</p>
-            <p>Phone: +47 472 32 199</p>
+          <p className="text-left my-6">A passionate front-end developer and artist with a focus on creating visually appealing and user-friendly interfaces. I strive to deliver the best possible user experience through modern technologies.</p>
+          <div className="text-left mb-4">
+            <div className="flex flex-row">
+              <p className="text-[#75D6FF] font-semibold mb-2 mr-3">Email: </p>
+              <p>aksel.boutrouefaret@yahoo.com</p>
+            </div>
+            <div className="flex flex-row">
+              <p className="text-[#75D6FF] font-semibold mr-3">Phone: </p>
+              <p>+47 472 32 199</p>
+            </div>
           </div>
           <div className="text-center">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View CV</button>
+            <button className="bg-[#1260BC] text-white px-12 py-2 my-6 rounded hover:bg-blue-600">View CV</button>
           </div>
         </div>
       </div>
