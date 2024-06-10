@@ -2,6 +2,7 @@ import React from 'react';
 import About from '../About';
 import Skills from '../Skills';
 import Projects from '../../Projects';
+import Contact from '../Contact';
 import heroOne from '../../../assets/images/Westfjords sunset.jpg';
 import breakPoint from '../../../assets/images/break.png';
 import '../../Styles/Fonts/Ubuntu.css';
@@ -56,9 +57,9 @@ const Home: React.FC = () => {
         ></div>
 
         {/* Contact section */}
-        <section id="contact" className="text-white mb-10">
-          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-6'>Contact</h2>
-          <p>Contact form or details...</p>
+        <section id="contact" className="text-white mb-12">
+          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-10'>Contact</h2>
+          <Contact />
         </section>
       </div>
     </div>
