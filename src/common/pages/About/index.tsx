@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../../components/Modal";
 import aboutBackground from "../../../assets/images/ai_4.jpg";
 import profileImage from "../../../assets/images/Ny selv-bilde 2021.jpg";
 import '../../Styles/Fonts/Ubuntu.css';
 
 const About: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <section id="about" className="relative w-full min-h-screen bg-cover bg-center flex flex-col" style={{ backgroundImage: `url(${aboutBackground})` }}>
       <div className="flex flex-col">
@@ -27,10 +38,31 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="text-center">
-            <button className="bg-[#1260BC] text-white px-12 py-2 my-6 rounded hover:bg-blue-600">View CV</button>
+            <button
+              onClick={openModal}
+              className="bg-[#1260BC] text-white px-12 py-2 my-6 rounded hover:bg-blue-600"
+            >
+              View CV
+            </button>
           </div>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <iframe
+          src="/pdf/CV-finished version 2024.pdf"
+          title="CV"
+          className="w-full h-full"
+        />
+        <div className="text-center mt-4">
+          <a
+            href="/pdf/CV-finished version 2024.pdf"
+            download="Aksel_CV.pdf"
+            className="bg-[#1260BC] text-white px-12 py-2 rounded hover:bg-blue-600"
+          >
+            Download CV
+          </a>
+        </div>
+      </Modal>
     </section>
   );
 };
