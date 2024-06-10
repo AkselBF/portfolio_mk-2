@@ -1,0 +1,25 @@
+nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+nav button {
+  display: block;
+  margin: 15px 0 15px 0;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+nav button:hover {
+  background: #ccc;
+}

@@ -1,0 +1,24 @@
+/* Disable scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Additional styles */
+.modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  position: relative;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.modal-close {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}

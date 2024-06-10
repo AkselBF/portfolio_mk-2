@@ -1,0 +1,88 @@
+/* Flex container for the skills grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 85px; /* Adjust the gap between skills as needed */
+}
+
+/* Group styling */
+.skills-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+
+/* Hexagon wrapper styling */
+.hexagon-wrapper {
+  width: 140px;
+  height: 120px;
+  display: flex;
+  justify-content: flex-start; /* Align hexagons to start from the left */
+  align-items: flex-start; /* Align hexagons to start from the top */
+  position: relative;
+  overflow: auto;
+}
+
+/* Hexagon styling */
+.hexagon {
+  width: 100%;
+  height: 100%;
+  background-color: #1260BC;
+  clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.hexagon-icon {
+  width: 40px;
+  height: 40px;
+  color: #75D6FF;
+}
+
+.hexagon-text {
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Styling for the third hexagon in the group */
+.hexagon-third {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  margin-left: 70px; /* Push the third hexagon to the right */
+  z-index: 1;
+}
+
+/* Ensure proper spacing and alignment */
+.skills-group {
+  height: 240px; /* Adjust this value to ensure spacing between rows */
+}
+
+/* HTML and CSS skills */
+.skills-group:nth-child(odd) .hexagon-wrapper:nth-child(1) {
+  margin-bottom: 4px; /* Add margin to the HTML skill */
+}
+
+.skills-group:nth-child(odd) .hexagon-wrapper:nth-child(2) {
+  margin-top: 4px; /* Add margin to the CSS skill */
+}
+
+.skills-group:nth-child(even) .hexagon-wrapper:nth-child(1) {
+  margin-bottom: 8px; /* Space between the first and second in even groups */
+}

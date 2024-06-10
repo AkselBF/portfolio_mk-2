@@ -1,0 +1,64 @@
+.relative {
+  position: relative;
+}
+
+.floating-label {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  color: #9e9e9e;
+  pointer-events: none;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.filled ~ .floating-label,
+input:focus ~ .floating-label,
+textarea:focus ~ .floating-label {
+  top: -1rem;
+  left: 0;
+  transform: translateY(0);
+  font-size: 0.75rem;
+  color: #75D6FF;
+}
+
+input,
+textarea {
+  border: none;
+  border-bottom: 2px solid #75D6FF;
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom-color: #1260BC;
+}
+
+input.filled,
+textarea.filled {
+  border-bottom-color: #1260BC;
+}
+
+.contact-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-button:not([disabled]):hover {
+  background-color: #004080; /* Adjust as necessary for the hover effect */
+}
+
+.error-container {
+  min-height: 24px; /* Adjust based on your error message font size and desired spacing */
+  margin-top: 5px;
+}
+
+.error-container p {
+  margin: 0;
+  padding: 0;
+}

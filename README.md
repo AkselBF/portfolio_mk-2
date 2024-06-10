@@ -38,7 +38,7 @@ npm install
 
 ### Run project
 
-To run the app, use the following command:
+To run the app, use the command:
 ```
 npm run dev
 ```
@@ -48,7 +48,7 @@ npm run dev
 Here are different ways to contact me, should there be a need to.
 Phone and email:
 - Phone: +47 472 32 199
-- email: akse.boutrouefaret@yahoo.com
+- email: aksel.boutrouefaret@yahoo.com
 
 Social links:
 - [My LinkedIn page](https://www.linkedin.com/in/aksel-boutroue-faret-20b451228/)
