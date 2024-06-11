@@ -1,3 +1,4 @@
+/* Navigation bar for larger screens */
 nav {
   position: fixed;
   top: 50%;
@@ -12,7 +13,7 @@ nav {
 
 nav button {
   display: block;
-  margin: 15px 0 15px 0;
+  margin: 15px 0;
   background: #fff;
   border: none;
   border-radius: 50%;
@@ -22,4 +23,37 @@ nav button {
 
 nav button:hover {
   background: #ccc;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+.dropdown-menu.transition-all {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu button {
+  margin: 0; /* Remove default margin */
+  background: none; /* Remove default background */
+  border: none; /* Remove border */
+  padding: 10px;
+  border-radius: 50%;
+  background: #fff;
+  transition: background 0.3s;
+}
+
+.dropdown-menu button:hover {
+  background: #ccc;
+}
+
+/* Additional styles for button transition */
+.fixed-button {
+  transition: top 0.3s ease-in-out;
 }

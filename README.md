@@ -1,6 +1,6 @@
 # Portfolio mk-2
 
-![Portfolio presentation image](./src/assets/images/lake_mountain_view.jpg)
+![Portfolio presentation image](./src/assets/images/Westfjords%20sunset.jpg)
 
 This application is my portfolio. In here, information about me and all projects I have done are present. 
 
