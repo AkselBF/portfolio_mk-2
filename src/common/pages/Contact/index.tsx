@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
   const watchMessage = watch("message", "");
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-[60%] mx-auto text-right">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-[90%] sm:w-[70%] lg:w-[60%] mx-auto text-right">
       <div className="relative mb-6">
         <input
           {...register("name", {

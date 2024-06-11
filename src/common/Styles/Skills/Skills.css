@@ -1,0 +1,57 @@
+/* Skills container animation */
+.fields-container, .skills-content {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateX(100%);
+  position: relative;
+}
+
+.fields-container.show, .skills-content.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Skills container animation for small screens */
+@media (max-width: 768px) {
+  .skills-container, .skills-content {
+    transform: translateY(-100%);
+  }
+
+  .skills-container.show, .skills-content.show {
+    transform: translateY(0);
+  }
+}
+
+/* Fields container animation */
+.fields-container, .skills-content {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateX(100%);
+  position: relative;
+}
+
+.fields-container.show, .skills-content.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fields container animation for small screens */
+@media (max-width: 768px) {
+  .fields-container {
+    transform: translateY(-100%);
+  }
+
+  .fields-container.show {
+    transform: translateY(0);
+  }
+}
+
+/*
+.skills-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+*/
