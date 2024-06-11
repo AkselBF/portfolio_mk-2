@@ -3,7 +3,7 @@ import '../../Styles/Skills/Honeycomb.css';
 import '../../Styles/Skills/Skills.css';
 
 interface SkillsGridProps {
-  skills: { name: string, icon: string }[]; // Update the type of icon to string
+  skills: { name: string, icon: string }[];
 }
 
 const SkillsSet: React.FC<SkillsGridProps> = ({ skills }) => {

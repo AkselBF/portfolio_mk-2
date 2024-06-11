@@ -47,7 +47,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           href={project.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(event) => event.stopPropagation()} // Prevent card click from triggering
+          onClick={(event) => event.stopPropagation()}
         >
           <button className="bg-[#1260BC] text-white font-semibold px-6 py-2 rounded hover:bg-[#1248bc]">
             <GitHubIcon /> View Code
