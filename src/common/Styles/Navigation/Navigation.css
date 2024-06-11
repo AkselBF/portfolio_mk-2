@@ -1,3 +1,4 @@
+/* Navigation bar for larger screens */
 nav {
   position: fixed;
   top: 50%;
@@ -50,4 +51,9 @@ nav button:hover {
 
 .dropdown-menu button:hover {
   background: #ccc;
+}
+
+/* Additional styles for button transition */
+.fixed-button {
+  transition: top 0.3s ease-in-out;
 }

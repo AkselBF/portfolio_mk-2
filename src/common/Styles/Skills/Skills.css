@@ -1,57 +1,71 @@
-/* Skills container animation */
-.fields-container, .skills-content {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  opacity: 0;
-  transform: translateX(100%);
+/* Main container styles */
+.fields-container {
   position: relative;
-}
-
-.fields-container.show, .skills-content.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Skills container animation for small screens */
-@media (max-width: 768px) {
-  .skills-container, .skills-content {
-    transform: translateY(-100%);
-  }
-
-  .skills-container.show, .skills-content.show {
-    transform: translateY(0);
-  }
-}
-
-/* Fields container animation */
-.fields-container, .skills-content {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 0;
-  transform: translateX(100%);
-  position: relative;
+  transform: translateX(100%); /* Initially hidden off-screen to the right */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.fields-container.show, .skills-content.show {
+.fields-container.slide-in {
+  transform: translateX(0); /* Slide in from the right */
   opacity: 1;
-  transform: translateX(0);
 }
 
-/* Fields container animation for small screens */
+.fields-container.slide-out {
+  transform: translateX(100%); /* Slide out to the right */
+  opacity: 0;
+}
+
 @media (max-width: 768px) {
   .fields-container {
-    transform: translateY(-100%);
+    transform: translateY(-100%); /* Initially hidden off-screen to the top */
   }
 
-  .fields-container.show {
-    transform: translateY(0);
+  .fields-container.slide-in {
+    transform: translateY(0); /* Slide in from the top */
+  }
+
+  .fields-container.slide-out {
+    transform: translateY(-100%); /* Slide out to the top */
   }
 }
 
-/*
-.skills-background {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
+.skills-grid-square {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 10px;
 }
-*/
+
+/* Square skill styling */
+.square-skill {
+  width: 100px;
+  height: 100px;
+  background-color: #1260BC;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.square-icon {
+  width: 40px;
+  height: 40px;
+  color: #75D6FF;
+}
+
+.square-text {
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Hover effect for square skills */
+.square-skill:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import BuildIcon from '@mui/icons-material/Build';
@@ -18,13 +18,26 @@ const sections = [
 const Navigation: React.FC = () => {
   const location = useLocation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   // Only render navigation if the current path is home
   if (location.pathname !== '/') {
     return null;
   }
 
-  const handleScroll = (id: string) => {
+  // Handle scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -38,7 +51,7 @@ const Navigation: React.FC = () => {
         {sections.map(section => (
           <button
             key={section.id}
-            onClick={() => handleScroll(section.id)}
+            onClick={() => handleScrollToSection(section.id)}
             className="p-2 rounded-full shadow-md bg-white hover:bg-gray-300 transition duration-300"
             aria-label={section.label}
           >
@@ -48,7 +61,7 @@ const Navigation: React.FC = () => {
       </nav>
 
       {/* Dropdown button for smaller screens */}
-      <div className="md:hidden fixed right-5 top-1/4 transform -translate-y-1/2 z-50">
+      <div className={`md:hidden fixed right-5 ${scrollPosition > 100 ? 'top-16' : 'top-1/4'} transform -translate-y-1/2 z-50 transition-all duration-300`}>
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           className="bg-white p-4 rounded-full shadow-lg"
@@ -68,13 +81,13 @@ const Navigation: React.FC = () => {
         {/* Dropdown menu */}
         {isDropdownOpen && (
           <div
-            className="dropdown-menu transition-all duration-500 ease-in-out absolute right-0 mt-2 w-14 p-1.5 space-y-3 origin-top-right bg-gray-800 bg-opacity-90 rounded-md shadow-lg z-50"
+            className="dropdown-menu transition-all duration-500 ease-in-out absolute right-0 mt-2 w-14 p-1.5 space-y-6 origin-top-right bg-gray-800 bg-opacity-90 rounded-md shadow-lg z-50"
           >
             {sections.map(section => (
               <button
                 key={section.id}
                 onClick={() => {
-                  handleScroll(section.id);
+                  handleScrollToSection(section.id);
                   setIsDropdownOpen(false);
                 }}
                 className="flex items-center justify-center w-full p-2 hover:bg-gray-500 transition duration-150"

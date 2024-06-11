@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import SkillsSet from "../../components/Skillset";
 import { skillsData } from "../../data/skillsData";
-import '../../Styles/Scrollbars/ProjectScrollbar.css';
+import '../../Styles/Skills/Skills.css';
+import '../../Styles/Scrollbars/SkillScrollbar.css';
 import '../../Styles/Fonts/Ubuntu.css';
 import skillBackground from '../../../assets/images/lake_mountain_view.jpg';
 
@@ -45,7 +46,7 @@ const Skills: React.FC = () => {
       </div>
 
       {/* Skills Div */}
-      <div className={`flex-1 w-[98%] sm:w-[80%] lg:w-[40%] xl:w-[60%] max-h-[500px] my-6 lg:my-20 transition-all duration-500 relative ${showSkills ? 'block' : 'hidden'} md:block`}>
+      <div className={`flex-1 w-[98%] sm:w-full md:w-[98%] lg:w-[40%] xl:w-[60%] max-h-[500px] my-6 lg:my-20 relative`}>
         <div
           className="absolute w-full lg:w-[140%] lg:-ml-[40%] xl:w-[160%] xl:-ml-[60%] sm:inset-0 bg-cover bg-center lg:border-r-2 lg:border-b-2 lg:border-[#75D6FF] lg:rounded-br-lg"
           style={{
@@ -58,9 +59,9 @@ const Skills: React.FC = () => {
         </div>
         
         {/* Content for skills goes here */}
-        <div className="relative flex flex-col items-center justify-center lg:pr-[2px]">
+        <div className={`fields-container absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 ${showSkills ? 'slide-in' : 'slide-out'}`}>
           {/* Skills Toggle Texts */}
-          <div className={`projects-list bg-[#152B4480] w-full overflow-x-auto px-8 py-4 font-semibold lg:rounded-bl-md mb-12 flex space-x-12 transition-all duration-500 ${showSkills ? 'block' : 'hidden'}`}>
+          <div className={`skills-content skill-overflow bg-[#152B4480] w-full overflow-x-auto px-8 py-4 font-semibold lg:rounded-bl-md lg:mr-[2px] mb-12 flex space-x-12 transition-all duration-500 ${showSkills ? 'fade-in' : 'fade-out'}`}>
             {Object.keys(skillsData).map((category) => (
               <button
                 key={category}
@@ -72,10 +73,10 @@ const Skills: React.FC = () => {
             ))}
           </div>
           {/* Skills Container */}
-          <div className={`relative bg-[#152B44] p-4 lg:rounded-l-lg flex-1 w-full max-w-4xl overflow-hidden transition-all duration-500 ${showSkills ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className={`skills-content relative bg-[#152B44] lg:mr-[2px] p-4 lg:rounded-l-lg flex-1 w-full max-w-4xl overflow-hidden transition-all duration-500 ${showSkills ? 'fade-in' : 'fade-out'}`}>
             {/* Triangular cutout on the left side */}
             <div className="absolute left-0 top-0 h-full w-1/3 transform -skew-x-12 bg-[#152B44]"></div>
-            <div className={`relative z-10 flex flex-wrap ${showSkills ? 'block' : 'hidden'}`}>
+            <div className={`skill-overflow relative z-10 overflow-x-auto flex flex-wrap`}>
               <SkillsSet skills={skillsData[selectedCategory]} />
             </div>
           </div>
