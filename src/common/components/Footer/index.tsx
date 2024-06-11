@@ -4,14 +4,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-/*
-www.linkedin.com/in/aksel-boutroue-faret-20b451228
-https://www.linkedin.com/in/aksel-boutroue-faret-20b451228/
-https://github.com/AkselBF
-
-https://www.facebook.com/profile.php?id=100013820534458
-*/
-
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#000000] text-white px-3 sm:px-12 pt-6 mb-10">
