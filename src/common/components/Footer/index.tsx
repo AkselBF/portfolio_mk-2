@@ -1,4 +1,5 @@
 import React from 'react';
+import TeamsIcon from '../../../assets/icons/teamsIcon.png';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -22,9 +23,10 @@ const Footer: React.FC = () => {
         <div className='mt-6 md:mt-0'>
           <p className='text-[#75D6FF] font-semibold mb-3'>Social platforms:</p>
           <div className='flex flex-row justify-center md:justify-end space-x-3'>
-            <FacebookIcon />
-            <GitHubIcon />
             <LinkedInIcon />
+            <img src={`${TeamsIcon}`} alt='Teams icon' />
+            <GitHubIcon />
+            <FacebookIcon />
           </div>
         </div>
       </div>

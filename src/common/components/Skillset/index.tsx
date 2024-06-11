@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { SvgIconComponent } from "@mui/icons-material";
 import '../../Styles/Skills/Honeycomb.css';
 import '../../Styles/Skills/Skills.css';
 
 interface SkillsGridProps {
-  skills: { name: string, icon: SvgIconComponent }[];
+  skills: { name: string, icon: string }[]; // Update the type of icon to string
 }
 
 const SkillsSet: React.FC<SkillsGridProps> = ({ skills }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  // Update screen size state on resize
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768); // Adjust this value based on your `md` breakpoint
+      setIsSmallScreen(window.innerWidth < 768);
     };
     window.addEventListener("resize", handleResize);
-    handleResize(); // Initial check
+    handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -29,7 +27,7 @@ const SkillsSet: React.FC<SkillsGridProps> = ({ skills }) => {
       <div className="skills-grid-square">
         {skills.map((skill, index) => (
           <div key={index} className="square-skill">
-            {React.createElement(skill.icon, { className: "square-icon" })}
+            <img src={skill.icon} alt={`${skill.name} icon`} className="square-icon" />
             <p className="square-text">{skill.name}</p>
           </div>
         ))}
@@ -43,7 +41,7 @@ const SkillsSet: React.FC<SkillsGridProps> = ({ skills }) => {
       }
       acc[groupIndex].push(skill);
       return acc;
-    }, [] as { name: string, icon: SvgIconComponent }[][]);
+    }, [] as { name: string, icon: string }[][]);
 
     return (
       <div className="skills-grid">
@@ -51,14 +49,14 @@ const SkillsSet: React.FC<SkillsGridProps> = ({ skills }) => {
           <div key={index} className="skills-group">
             <div className="hexagon-wrapper">
               <div className="hexagon">
-                {React.createElement(group[0].icon, { className: "hexagon-icon" })}
+                <img src={group[0].icon} alt={`${group[0].name} icon`} className="hexagon-icon" />
                 <p className="hexagon-text">{group[0].name}</p>
               </div>
             </div>
             {group[1] && (
               <div className="hexagon-wrapper">
                 <div className="hexagon">
-                  {React.createElement(group[1].icon, { className: "hexagon-icon" })}
+                  <img src={group[1].icon} alt={`${group[1].name} icon`} className="hexagon-icon" />
                   <p className="hexagon-text">{group[1].name}</p>
                 </div>
               </div>
@@ -66,7 +64,7 @@ const SkillsSet: React.FC<SkillsGridProps> = ({ skills }) => {
             {group[2] && (
               <div className="hexagon-wrapper hexagon-third">
                 <div className="hexagon">
-                  {React.createElement(group[2].icon, { className: "hexagon-icon" })}
+                  <img src={group[2].icon} alt={`${group[2].name} icon`} className="hexagon-icon" />
                   <p className="hexagon-text">{group[2].name}</p>
                 </div>
               </div>

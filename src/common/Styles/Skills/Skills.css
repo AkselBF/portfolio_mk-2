@@ -1,32 +1,31 @@
-/* Main container styles */
 .fields-container {
   position: relative;
   opacity: 0;
-  transform: translateX(100%); /* Initially hidden off-screen to the right */
+  transform: translateX(100%);
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .fields-container.slide-in {
-  transform: translateX(0); /* Slide in from the right */
+  transform: translateX(0);
   opacity: 1;
 }
 
 .fields-container.slide-out {
-  transform: translateX(100%); /* Slide out to the right */
+  transform: translateX(100%);
   opacity: 0;
 }
 
 @media (max-width: 768px) {
   .fields-container {
-    transform: translateY(-100%); /* Initially hidden off-screen to the top */
+    transform: translateY(-100%);
   }
 
   .fields-container.slide-in {
-    transform: translateY(0); /* Slide in from the top */
+    transform: translateY(0);
   }
 
   .fields-container.slide-out {
-    transform: translateY(-100%); /* Slide out to the top */
+    transform: translateY(-100%);
   }
 }
 
@@ -37,7 +36,6 @@
   padding: 10px;
 }
 
-/* Square skill styling */
 .square-skill {
   width: 100px;
   height: 100px;
@@ -64,7 +62,6 @@
   text-align: center;
 }
 
-/* Hover effect for square skills */
 .square-skill:hover {
   transform: scale(1.06);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
