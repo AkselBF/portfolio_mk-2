@@ -4,7 +4,7 @@ import Skills from '../Skills';
 import Projects from '../../Projects';
 import Contact from '../Contact';
 import Footer from '../../components/Footer';
-
+import TypingEffect from '../../components/TypingEffect';
 import heroOne from '../../../assets/images/Westfjords sunset.jpg';
 import breakPoint from '../../../assets/images/break.png';
 import '../../Styles/Fonts/Ubuntu.css';
@@ -20,7 +20,13 @@ const Home: React.FC = () => {
       >
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="relative flex flex-col text-left h-full p-5 lg:p-16">
-          <h1 className="ubuntu-bold text-white text-6xl font-semibold my-auto">Welcome</h1>
+          <h1 className="ubuntu-bold text-white text-6xl font-semibold mt-16 mb-auto">Hello</h1>
+          <div className='relative'>
+            <div className="absolute text-[#75D6FF] font-semibold text-2xl -top-24">
+              <TypingEffect />
+            </div>
+          </div>
+          
           <h2 className="ubuntu-regular text-white text-xl w-[85%] md:w-[75%] xl:w-[50%] mt-4">This application is about showing what I'm about, and what I do. My projects can be found further down</h2>
           <div className='w-full mt-8 flex flex-row mx-auto'>
             <div className='bg-[#75D6FF] w-[85%] md:w-[75%] xl:w-[50%] h-1 rounded-l-full'></div>
@@ -60,7 +66,7 @@ const Home: React.FC = () => {
 
         {/* Contact section */}
         <section id="contact" className="text-white mb-12">
-          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-10'>Contact me</h2>
+          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-10'>Contact me (yet available)</h2>
           <Contact />
         </section>
 
