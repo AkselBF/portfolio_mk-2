@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "../../data/projectsData";
 import '../../Styles/Scrollbars/ProjectScrollbar.css';
+import '../../Styles/Fonts/Ubuntu.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import HomeIcon from '@mui/icons-material/Home';
@@ -20,11 +21,11 @@ const ProjectDetail: React.FC = () => {
     <div className="project-detail text-left">
       <img className="w-full h-[320px] object-cover mb-4" src={project.imageUrl} alt={project.title} />
       <div className="relative">
-        <h1 className="text-center text-white bg-[#00050C80] -mt-[64px] py-2 px-6 text-2xl font-semibold">{project.title}</h1>
+        <h1 className="ubuntu-bold text-center text-white bg-[#00050Ccc] -mt-[68px] py-3 px-6 text-2xl font-semibold">{project.title}</h1>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-between px-3 md:px-12 mt-6">
-        <div className="w-full sm:w-[80%] lg:w-[40%] mx-auto">
-          <img className="rounded-md" src={project.imageUrl} alt={project.title} />
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-between px-3 md:px-12 mt-10">
+        <div className="w-full sm:w-[80%] lg:w-[40%] mx-auto justify-center lg:justify-normal">
+          <img className="rounded-md lg:max-h-[280px] mx-auto lg:ml-0 lg:mr-auto" src={project.imageUrl} alt={project.title} />
         </div>
 
         <div className="relative w-full sm:w-[80%] lg:w-[50%] mx-auto my-6 lg:my-0">

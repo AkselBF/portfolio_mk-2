@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
           })}
           id="message"
           maxLength={300}
-          className={`text-message bg-transparent border-b-2 border-[#75D6FF] p-2 w-full h-32 focus:outline-none focus:border-[#1260BC] transition-all ${watchMessage && 'filled'}`} 
+          className={`text-message bg-transparent border-b-2 border-[#75D6FF] p-2 w-full h-32 min-h-32 max-h-32 focus:outline-none focus:border-[#1260BC] transition-all ${watchMessage && 'filled'}`} 
           autoComplete="off"
         ></textarea>
         <label htmlFor="message" className={`floating-label ${watchMessage && 'filled'}`}>Message</label>
@@ -78,10 +78,12 @@ const Contact: React.FC = () => {
       </div>
       <button
         type="submit"
-        disabled={!isValid}
+        /*disabled={!isValid}*/
+        disabled={true}
         className={`contact-button bg-[#1260BC] text-white font-semibold px-12 py-2 rounded-md transition-all ${
           !isValid ? 'opacity-50 cursor-not-allowed' : 'opacity-100 hover:bg-blue-600'
         }`}
+        title="Contact form is currently disabled"
       >
         Send
       </button>
