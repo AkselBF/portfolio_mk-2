@@ -32,7 +32,7 @@ const TypingEffect: React.FC = () => {
         }
       } else {
         if (isLastChar) {
-          setTypingSpeed(1000);  // Shorter pause before deleting starts
+          setTypingSpeed(1500);  // Shorter pause before deleting starts
           setDeleting(true);
         } else {
           setText(currentText.substring(0, charIndex + 1));

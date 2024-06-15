@@ -66,7 +66,7 @@ const Home: React.FC = () => {
 
         {/* Contact section */}
         <section id="contact" className="text-white mb-12">
-          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-10'>Contact me (yet available)</h2>
+          <h2 className='ubuntu-bold text-white text-2xl font-semibold mb-10'>Contact</h2>
           <Contact />
         </section>
 

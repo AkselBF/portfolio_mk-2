@@ -19,7 +19,7 @@ const SkillsSet: React.FC<SkillsGridProps> = ({ skills }) => {
   }, []);
 
   if (skills.length === 0) {
-    return <p className="text-white text-lg mt-4">To be learned</p>;
+    return <p className="text-white text-lg mt-4">In progress</p>;
   }
 
   if (isSmallScreen) {

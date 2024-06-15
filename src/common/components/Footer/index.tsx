@@ -1,12 +1,14 @@
 import React from 'react';
-//import TeamsIcon from '../../../assets/icons/teamsIcon.png';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+//import FacebookIcon from '@mui/icons-material/Facebook';
+//import GitHubIcon from '@mui/icons-material/GitHub';
+//import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#000000] text-white px-3 sm:px-12 pt-6 mb-10">
+      {/* Alternate text */}
+      <p className='justify-start mb-4 md:mb-0 md:mr-5'>&copy; 2024 Personal portfolio. All rights reserved.</p>
+      {/*
       <div className="container mx-auto justify-between flex flex-col md:flex-row">
         <div className='flex flex-col'>
           <div className='flex flex-col sm:flex-row text-left mb-3'>
@@ -32,8 +34,6 @@ const Footer: React.FC = () => {
                 style={{ fontSize: '32px' }}
               />
             </a>
-            
-            {/*<img src={`${TeamsIcon}`} alt='Teams icon' />*/}
 
             <a 
               href="https://github.com/AkselBF" 
@@ -57,6 +57,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+       */}
     </footer>
   );
 };
