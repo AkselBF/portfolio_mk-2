@@ -1,15 +1,14 @@
+/*
 .text-message::-webkit-scrollbar {
   background: transparent;
   padding: 4px;
 }
 
-/* Track */
 .text-message::-webkit-scrollbar-track {
   background: transparent;
   padding: 4px;
 }
 
-/* Handle */
 .text-message::-webkit-scrollbar-thumb {
   background-color: #ADADAD;
   border-radius: 100px;
@@ -17,7 +16,11 @@
   margin: 2px;
 }
 
-/* Handle on hover */
 .text-message::-webkit-scrollbar-thumb:hover {
   background-color: #989898;
+}
+*/
+
+a {
+  text-align: center;
 }

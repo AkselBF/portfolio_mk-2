@@ -15,7 +15,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="min-h-screen lg:ml-10 mr-auto w-full sm:w-[90%] bg-[#00050C] text-white px-4 lg:p-8 flex flex-col lg:flex-row">
+    <section id="skills" className="min-h-screen lg:ml-10 mr-auto w-full sm:w-[90%] bg-[#00050C] text-white px-4 lg:p-8 flex flex-col lg:flex-row relative">
       {/* Description div */}
       <div className="flex flex-col relative text-left my-20 w-[95%] sm:w-[80%] lg:w-[60%] xl:w-[40%] max-h-[420px] flex-1 mb-8 md:mb-0 md:mr-8 z-10"
         style={{
@@ -78,6 +78,8 @@ const Skills: React.FC = () => {
             </div>
           </div>
         </div>
+
+        <div className="lg:absolute lg:w-[23%] lg:h-full lg:bg-[#00050C] lg:-right-[23%]"></div>
       </div>
     </section>
   );

@@ -32,7 +32,7 @@ const ProjectDetail: React.FC = () => {
           <p className="projects-list text-white px-2 overflow-y-auto max-h-[168px] md:max-h-[144px]">{project.detailDescription}</p>
           <div className="flex flex-col items-center sm:items-end justify-end sm:flex-row space-y-3 sm:space-x-4 sm:space-y-0 mt-10 lg:absolute lg:bottom-0 lg:right-0">
             <a href={project.appUrl} target="_blank" rel="noopener noreferrer">
-              <button className="bg-red-500 text-white w-[160px] py-2 rounded hover:bg-red-600">
+              <button className="bg-[#FF5C00] text-white w-[160px] py-2 rounded hover:bg-[#ff4400]">
                 <PlayCircleIcon /> View App
               </button>
             </a>

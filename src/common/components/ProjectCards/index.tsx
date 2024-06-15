@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import LinkIcon from '@mui/icons-material/Link';
 
 interface ProjectCardProps {
   project: {
@@ -31,16 +32,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     >
       <h2 className="text-xl font-semibold p-4 h-[88px] md:h-[60px]">{project.title}</h2>
       <img className="w-full h-48 object-cover" src={project.imageUrl} alt={`${project.title}/Netlify`} />
-      <p className="px-4 my-3 h-[72px] md:h-[48px]">{project.description}</p>
-      <div className="p-4 flex space-x-4 justify-between">
+      <p className="px-4 my-3 text-left h-[72px] md:h-[48px]">{project.description}</p>
+      <div className="p-4 flex space-x-3 justify-end">
         <a
           href={project.appUrl}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(event) => event.stopPropagation()}
         >
-          <button className="bg-red-500 text-white font-semibold px-6 py-2 rounded hover:bg-red-600">
-            <PlayCircleIcon /> View App
+          <button className="bg-[#FF5C00] text-white font-semibold px-4 py-2 rounded hover:bg-[#ff4400] flex flex-row items-center">
+            <LinkIcon style={{ fontSize: '16px' }} className='mr-2' />
+            <div>
+              <PlayCircleIcon className='ml-2' />
+            </div>
           </button>
         </a>
         <a
@@ -49,8 +53,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           rel="noopener noreferrer"
           onClick={(event) => event.stopPropagation()}
         >
-          <button className="bg-[#1260BC] text-white font-semibold px-6 py-2 rounded hover:bg-[#1248bc]">
-            <GitHubIcon /> View Code
+          <button className="bg-[#1260BC] text-white font-semibold px-4 py-2 rounded hover:bg-[#1248bc] flex flex-row items-center">
+            <LinkIcon style={{ fontSize: '16px' }} className='mr-2' />
+            <div>
+              <GitHubIcon className='ml-2' />
+            </div>
           </button>
         </a>
       </div>
