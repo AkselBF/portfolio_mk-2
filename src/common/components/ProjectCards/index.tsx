@@ -11,7 +11,7 @@ interface ProjectCardProps {
     appUrl: string;
     githubUrl: string;
     imageUrl: string;
-    description: string;
+    introduction: string;
   };
 }
 
@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     >
       <h2 className="text-xl font-semibold p-4 h-[88px] md:h-[60px]">{project.title}</h2>
       <img className="w-full h-48 object-cover" src={project.imageUrl} alt={`${project.title}/Netlify`} />
-      <p className="px-4 my-3 text-left h-[72px] md:h-[48px]">{project.description}</p>
+      <p className="px-4 my-3 text-left h-[72px] md:h-[48px] line-clamp-2">{project.introduction}</p>
       <div className="p-4 flex space-x-3 justify-end">
         <a
           href={project.appUrl}
