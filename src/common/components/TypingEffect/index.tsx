@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const texts = [
-  'I am a frontend developer, new yet creative.',
-  'Striving for functionality and beauty is my forte.',
-  'I have a passion for learning, and I still crave more.',
-  'Looking for dedication and creativity? Here I am!'
+  "Hi there, I'm Aksel, a frontend developer.",
+  "Striving for functionality and design is my forte.",
+  "I have a passion for learning, and I still crave more.",
+  "Looking for dedication and creativity? Here I am!"
 ];
 
 const TypingEffect: React.FC = () => {

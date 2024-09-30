@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
       <p className="px-4 my-3 text-left h-[72px] md:h-[48px] line-clamp-2 relative z-10">{project.introduction}</p>
 
-      <div className="p-4 flex space-x-3 justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-20">
+      <div className="p-4 flex space-x-3 justify-end sxl:opacity-0 sxl:group-hover:opacity-100 transition-opacity duration-300 relative z-20">
         <a
           href={project.appUrl}
           target="_blank"

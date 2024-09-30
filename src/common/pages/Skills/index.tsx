@@ -29,10 +29,10 @@ const Skills: React.FC = () => {
         
         <h1 className="text-4xl ubuntu-bold mb-4">Skills from all fields</h1>
         <div className="projects-list max-h-[300px] overflow-y-auto mb-10 lg:mb-4">
-          <p className="mb-4 w-full lg:w-[80%]">
+          <p className="text-left mb-4 w-full lg:w-[80%]">
             I may be a frontend developer, but the subjects I'm familiar with branch out to many different yet relevant fields. Being a frontend developer requires coding knowledge, of course, but design as well. That's where something like Digital art comes in. The list goes on.
           </p>
-          <p className="w-full lg:w-[80%]">
+          <p className="text-left w-full lg:w-[80%]">
             Clicking on the button below displays the skills of each field I'm familiar with along with every relevant skill.
           </p>
         </div>
