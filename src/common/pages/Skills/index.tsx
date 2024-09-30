@@ -29,19 +29,27 @@ const Skills: React.FC = () => {
         
         <h1 className="text-4xl ubuntu-bold mb-4">Skills from all fields</h1>
         <div className="projects-list max-h-[300px] overflow-y-auto mb-10 lg:mb-4">
-          <p className="mb-4 w-full lg:w-[80%]">
+          <p className="text-left mb-4 w-full lg:w-[80%]">
             I may be a frontend developer, but the subjects I'm familiar with branch out to many different yet relevant fields. Being a frontend developer requires coding knowledge, of course, but design as well. That's where something like Digital art comes in. The list goes on.
           </p>
-          <p className="w-full lg:w-[80%]">
+          <p className="text-left w-full lg:w-[80%]">
             Clicking on the button below displays the skills of each field I'm familiar with along with every relevant skill.
           </p>
         </div>
         
         <button
           onClick={toggleSkills}
-          className="bg-[#1260BC] text-white font-semibold lg:absolute bottom-0 w-[200px] py-2 rounded-md hover:bg-blue-600 self-start transition duration-300"
+          className={`${showSkills ? 'bg-[#53b7e2] hover:bg-[#75D6FF] text-black' : 'bg-[#1260BC] hover:bg-blue-600 text-white'} font-semibold lg:absolute bottom-0 w-[200px] py-5 rounded-md self-start transition duration-300 relative overflow-hidden`}
         >
-          {showSkills ? 'Hide skills' : 'Show skills'}
+          {/* Show Skills */}
+          <span className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${showSkills ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'}`}>
+            Show skills
+          </span>
+
+          {/* Hide Skills */}
+          <span className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${showSkills ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+            Hide skills
+          </span>
         </button>
       </div>
 

@@ -40,7 +40,7 @@ const About: React.FC = () => {
           <div className="text-center">
             <button
               onClick={openModal}
-              className="bg-[#1260BC] text-white px-12 py-2 my-6 rounded hover:bg-blue-600"
+              className="bg-[#1260BC] hover:bg-blue-600 transition duration-300 text-white px-12 py-2 my-6 rounded"
             >
               View CV
             </button>
@@ -49,13 +49,13 @@ const About: React.FC = () => {
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <iframe
-          src="/pdf/CV-finished version 2024.pdf"
+          src="/pdf/CV - english version 2024.pdf"
           title="CV"
           className="w-full h-full"
         />
         <div className="text-center mt-4">
           <a
-            href="/pdf/CV-finished version 2024.pdf"
+            href="/pdf/CV - english version 2024.pdf"
             download="Aksel_CV.pdf"
             className="bg-[#1260BC] text-white px-12 py-2 rounded hover:bg-blue-600"
           >

@@ -20,7 +20,7 @@ const Home: React.FC = () => {
       >
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="relative flex flex-col text-left h-full p-5 lg:p-16">
-          <h1 className="ubuntu-bold text-white text-6xl font-semibold mt-16 mb-auto">Hello</h1>
+          <h1 className="ubuntu-bold text-white text-6xl font-semibold mt-16 mb-auto">Howdy</h1>
           <div className='relative'>
             <div className="absolute text-[#75D6FF] font-semibold text-2xl -top-24">
               <TypingEffect />
