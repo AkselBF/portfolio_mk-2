@@ -4,8 +4,8 @@ import { projects } from "../../data/projectsData";
 import '../../Styles/Scrollbars/ProjectScrollbar.css';
 import '../../Styles/Fonts/Ubuntu.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-//import netlifyIcon from '../../../assets/icons/netlifyIcon.png';
+//import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import netlifyIcon from '../../../assets/icons/netlifyIcon.png';
 import HomeIcon from '@mui/icons-material/Home';
 
 const ProjectDetail: React.FC = () => {
@@ -36,7 +36,7 @@ const ProjectDetail: React.FC = () => {
       <div className="flex flex-col lg:flex-row justify-center mx-auto px-3 md:px-12 mt-16 w-[80%] relative">
         {/* Side Image */}
         <div className="relative w-full lg:w-[50%] mx-auto justify-center">
-          <img className="rounded-md h-[280px] max-h-[280px] max-w-[394px] mx-auto lg:ml-0 lg:mr-auto relative z-10" src={project.sideImage} alt={project.title} />
+          <img className="rounded-md h-[280px] lg:max-h-[280px] lg:max-w-[394px] mx-auto lg:ml-0 lg:mr-auto relative z-10 object-cover" src={project.sideImage} alt={project.title} />
 
           {/*
             Lines for bellow sm screen
@@ -135,7 +135,7 @@ const ProjectDetail: React.FC = () => {
         {/* Details Section */}
         <div className="relative w-full lg:w-[50%] mx-auto lg:ml-10 xl:mx-auto mt-24 mb-6 lg:my-0">
           <h2 className="ubuntu-bold text-2xl text-center lg:text-left font-semibold text-white px-3 mb-3">Details about {project.title}</h2>
-          <p className="projects-list text-white text-left px-3 overflow-y-auto max-h-[168px] md:max-h-[222px]">{project.description}</p>
+          <p className="projects-list text-white text-left px-3 overflow-y-auto md:h-[222px] lg:h-auto max-h-[168px] md:max-h-[222px]">{project.description}</p>
         </div>
       </div>
 
@@ -143,19 +143,19 @@ const ProjectDetail: React.FC = () => {
       <div className="flex flex-col-reverse lg:flex-row mt-[50px] lg:mt-[100px] justify-center mx-auto px-3 md:px-12 w-[80%] relative">
         <div className="lg:w-[50%]">
           <h2 className="ubuntu-bold text-2xl font-semibold text-white px-3 mb-3">Build</h2>
-          <p className="projects-list text-white text-left px-3 overflow-y-auto max-h-[72px] lg:max-h-[140px]">{project.details}</p>
+          <p className="projects-list text-white text-left px-3 overflow-y-auto max-h-[96px] lg:max-h-[140px]">{project.details}</p>
         </div>
 
-        <div className="mx-auto w-[40%] lg:w-[50%] text-center justify-center bg-[#00050C] h-[180px] lg:h-[220px] relative z-10">
+        <div className="mx-auto w-[80%] sm:w-[40%] lg:w-[50%] text-center justify-center bg-[#00050C] h-[180px] lg:h-[220px] relative z-10">
           <img className="text-center max-h-[140px] mx-auto lg:ml-[28%] xl:mx-auto my-5 lg:my-[40px]" src={project.appLogo} alt={project.title} />
         </div>
       </div>
 
       {/* Section for buttons */}
-      <div className="justify-between text-center flex sm:flex-row w-[65%] lg:w-[70%] mt-[100px] md:mt-[120px] mb-28 md:mb-0 sm:mx-auto relative z-10">
+      <div className="justify-between text-center flex flex-col sm:flex-row w-[65%] lg:w-[70%] mt-[16px] xs:mt-[46px] sm:mt-[76px] md:mt-[96px] lg:mt-[120px] mb-28 md:mb-0 ml-2 sm:mx-auto relative z-10">
         <button
           onClick={() => navigate('/')}
-          className="relative bg-white text-black font-semibold mt-10 md:mt-0 mb-4 md:mb-28 p-2 max-w-[52px] max-h-[52px] rounded-full hover:bg-gray-200 mx-auto sm:mx-0 group"
+          className="relative bg-white text-black font-semibold mt-10 md:mt-0 mb-3 md:mb-28 p-2 max-w-[52px] max-h-[52px] rounded-full hover:bg-gray-200 mx-auto sm:mx-0 group"
         >
           {/* Home Icon */}
           <HomeIcon style={{ fontSize: '36px' }} />
@@ -165,17 +165,17 @@ const ProjectDetail: React.FC = () => {
           </span>
         </button>
 
-        <div className="flex flex-col items-center sm:items-end justify-end sm:flex-row space-y-3 sm:space-x-28 sm:space-y-0 mt-10 md:mt-0 mb-4 md:mb-28">
+        <div className="flex flex-col items-center sm:items-end justify-end sm:flex-row space-y-3 sm:space-x-28 sm:space-y-0 sm:mt-10 md:mt-0 mb-4 md:mb-28">
           <a href={project.appUrl} target="_blank" rel="noopener noreferrer">
             <button className="relative bg-[#387AA3] text-white p-2 rounded-full hover:bg-[#15cdb7] group">
-              {/* Play Icon */}
-              <PlayCircleIcon style={{ fontSize: '36px' }} />
+              {/* Live Icon */}
+              <img src={netlifyIcon} alt="Live" className="w-[36px] h-[36px]" />
 
               {/* Replace PlayCircleIcon with PNG */}
-              {/*<img src={netlifyIcon} alt="Live" className="w-[36px] h-[36px]" />*/}
+              {/*<PlayCircleIcon style={{ fontSize: '36px' }} />*/}
               {/* Sliding Text */}
               <span className="absolute text-lg font-semibold left-[56px] top-1/2 transform -translate-y-1/2 opacity-0 text-white group-hover:opacity-100 group-hover:left-[64px] transition-all duration-300">
-                Live
+                Netlify
               </span>
             </button>
           </a>

@@ -39,9 +39,17 @@ const Skills: React.FC = () => {
         
         <button
           onClick={toggleSkills}
-          className="bg-[#1260BC] text-white font-semibold lg:absolute bottom-0 w-[200px] py-2 rounded-md hover:bg-blue-600 self-start transition duration-300"
+          className={`${showSkills ? 'bg-[#53b7e2] hover:bg-[#75D6FF] text-black' : 'bg-[#1260BC] hover:bg-blue-600 text-white'} font-semibold lg:absolute bottom-0 w-[200px] py-5 rounded-md self-start transition duration-300 relative overflow-hidden`}
         >
-          {showSkills ? 'Hide skills' : 'Show skills'}
+          {/* Show Skills */}
+          <span className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${showSkills ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'}`}>
+            Show skills
+          </span>
+
+          {/* Hide Skills */}
+          <span className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${showSkills ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+            Hide skills
+          </span>
         </button>
       </div>
 
