@@ -47,10 +47,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
-      <div ref={modalRef} className="about-modal relative bg-[#171717] rounded-lg shadow-lg p-4 max-w-3xl w-full h-[80vh] overflow-auto">
+      <div ref={modalRef} className="about-modal relative bg-[#171717] rounded-lg shadow-lg px-4 py-10 max-w-3xl w-full h-[85vh] overflow-auto">
         <button
           onClick={onClose}
-          className="absolute text-2xl top-2 right-4 text-white hover:text-gray-300"
+          className="absolute text-2xl font-semibold top-0 right-3 text-white hover:text-gray-300"
         >
           &times;
         </button>

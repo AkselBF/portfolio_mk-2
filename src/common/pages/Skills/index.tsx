@@ -9,9 +9,21 @@ import skillBackground from '../../../assets/images/lake_mountain_view.jpg';
 const Skills: React.FC = () => {
   const [showSkills, setShowSkills] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof skillsData>("Frontend");
+  const [fade, setFade] = useState(true); // State to control fade-in/out
+  const [currentSkills, setCurrentSkills] = useState(selectedCategory); // State to hold the current category
 
   const toggleSkills = () => {
     setShowSkills(!showSkills);
+  };
+
+  const handleCategoryChange = (category: keyof typeof skillsData) => {
+    // Trigger fade out, wait for animation, then change the skills
+    setFade(false);
+    setTimeout(() => {
+      setCurrentSkills(category); // Change the actual skills after fade-out
+      setSelectedCategory(category); // Update the selected category
+      setFade(true); // Fade back in
+    }, 500); // Matches the duration of the fade-out animation
   };
 
   return (
@@ -27,7 +39,7 @@ const Skills: React.FC = () => {
           <h2 className="text-lg ubuntu-regular text-left text-[#75D6FF] mb-2">Skills</h2>
         </div>
         
-        <h1 className="text-4xl ubuntu-bold mb-4">Skills from all fields</h1>
+        <h1 className="text-4xl ubuntu-bold mb-4">All field types</h1>
         <div className="projects-list max-h-[300px] overflow-y-auto mb-10 lg:mb-4">
           <p className="text-left mb-4 w-full lg:w-[80%]">
             I may be a frontend developer, but the subjects I'm familiar with branch out to many different yet relevant fields. Being a frontend developer requires coding knowledge, of course, but design as well. That's where something like Digital art comes in. The list goes on.
@@ -71,7 +83,7 @@ const Skills: React.FC = () => {
             {Object.keys(skillsData).map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category as keyof typeof skillsData)}
+                onClick={() => handleCategoryChange(category as keyof typeof skillsData)}
                 className={`text-[#75D6FF] transition-colors duration-300 ${selectedCategory === category ? "text-white" : "hover:text-white"}`}
               >
                 {category}
@@ -79,10 +91,12 @@ const Skills: React.FC = () => {
             ))}
           </div>
           
-          <div className={`skills-content relative bg-[#152B44] lg:max-h-[292px] lg:mr-[3px] p-4 lg:rounded-l-lg flex-1 w-full max-w-4xl overflow-hidden transition-all duration-500 ${showSkills ? 'fade-in' : 'fade-out'}`}>
-            <div className="absolute left-0 top-0 h-full w-1/3 transform -skew-x-12 bg-[#152B44]"></div>
-            <div className={`skill-overflow font-semibold relative z-10 overflow-x-auto flex flex-wrap`}>
-              <SkillsSet skills={skillsData[selectedCategory]} />
+          <div className={`skills-content relative bg-[#152b44c6] lg:max-h-[292px] lg:mr-[3px] p-4 lg:rounded-l-lg flex-1 w-full max-w-4xl overflow-hidden transition-all duration-500`}>
+            <div className="absolute left-0 top-0 h-full w-1/3 transform -skew-x-12 bg-[#152b4400]"></div>
+            
+            {/* Add fade effect to the skill set */}
+            <div className={`skill-overflow font-semibold relative z-10 overflow-x-auto flex flex-wrap transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}>
+              <SkillsSet skills={skillsData[currentSkills]} />
             </div>
           </div>
         </div>
