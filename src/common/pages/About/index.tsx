@@ -53,7 +53,7 @@ const About: React.FC = () => {
           title="CV"
           className="w-full h-full"
         />
-        <div className="text-center mt-4">
+        <div className="text-center mt-9">
           <a
             href="/pdf/CV - english version 2024.pdf"
             download="Aksel_CV.pdf"
