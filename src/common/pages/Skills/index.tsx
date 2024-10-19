@@ -11,10 +11,22 @@ const Skills: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof skillsData>("Frontend");
   const [fade, setFade] = useState(true); // State to control fade-in/out
   const [currentSkills, setCurrentSkills] = useState(selectedCategory); // State to hold the current category
+  const [hoveredTitle, setHoveredTitle] = useState("All field types");
+  const [hoveredColor, setHoveredColor] = useState("#FFFFFF");
   const [hoveredText, setHoveredText] = useState(""); // New state for hovered text
+  const [titleFading, setTitleFading] = useState(false);
   const [textFading, setTextFading] = useState(false); // New state to manage text fade effect
+  const [resetActiveSkill, setResetActiveSkill] = useState(false);
 
   const toggleSkills = () => {
+    if (showSkills) {
+      setHoveredTitle("All field types");
+      setHoveredColor("#FFFFFF");
+      setHoveredText("");
+      setResetActiveSkill(true);  // Trigger resetting the active skill
+    } else {
+      setResetActiveSkill(false);  // Reset back to default when showing skills
+    }
     setShowSkills(!showSkills);
   };
 
@@ -27,10 +39,14 @@ const Skills: React.FC = () => {
     }, 300);
   };
 
-  const handleTextChange = (newText: string) => {
+  const handleTextChange = (newTitle: string, newText: string, newColor: string) => {
+    setTitleFading(true);
     setTextFading(true); 
     setTimeout(() => {
+      setHoveredTitle(newTitle || "All field types");
+      setHoveredColor(newColor || "#FFFFFF");
       setHoveredText(newText);
+      setTitleFading(false);
       setTextFading(false);
     }, 300);
   };
@@ -52,7 +68,14 @@ const Skills: React.FC = () => {
           <h2 className="text-lg ubuntu-regular text-left text-[#75D6FF] mb-2">Skills</h2>
         </div>
 
-        <h1 className="text-4xl ubuntu-bold mb-4">All field types</h1>
+        <h1
+        className={`text-4xl ubuntu-bold mb-4 transition-opacity duration-500 ${
+          titleFading ? "fade-out" : "fade-in"
+        }`} 
+        style={{ color: hoveredColor }}
+      >
+        {hoveredTitle}
+      </h1>
 
         {/* Text with fade effect */}
         <div className={`projects-list max-h-[300px] overflow-y-auto mb-10 lg:mb-4`}>
@@ -162,7 +185,8 @@ const Skills: React.FC = () => {
               {/* Passing setHoveredText to SkillSet */}
               <SkillsSet
                 skills={skillsData[currentSkills]}
-                onHover={handleTextChange} // Use hover function to change text with fade
+                onHover={handleTextChange} 
+                resetTitle={resetActiveSkill ? () => setResetActiveSkill(false) : undefined} // Pass the reset trigger to SkillsSet
               />
             </div>
           </div>
