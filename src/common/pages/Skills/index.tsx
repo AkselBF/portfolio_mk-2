@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SkillsSet from "../../components/Skillset";
 import { skillsData } from "../../data/skillsData";
 import '../../Styles/Skills/Skills.css';
 import '../../Styles/Scrollbars/SkillScrollbar.css';
 import '../../Styles/Fonts/Ubuntu.css';
 import skillBackground from '../../../assets/images/lake_mountain_view.jpg';
+import LinkIcon from '@mui/icons-material/Link';
 
 const Skills: React.FC = () => {
   const [showSkills, setShowSkills] = useState(false);
@@ -17,12 +18,15 @@ const Skills: React.FC = () => {
   const [titleFading, setTitleFading] = useState(false);
   const [textFading, setTextFading] = useState(false); // New state to manage text fade effect
   const [resetActiveSkill, setResetActiveSkill] = useState(false);
+  const [activeSkillLink, setActiveSkillLink] = useState<string | null>(null);
+  const [activeSkillColor, setActiveSkillColor] = useState<string | null>(null);
 
   const toggleSkills = () => {
     if (showSkills) {
       setHoveredTitle("All field types");
       setHoveredColor("#FFFFFF");
       setHoveredText("");
+      setActiveSkillLink(null);
       setResetActiveSkill(true);  // Trigger resetting the active skill
     } else {
       setResetActiveSkill(false);  // Reset back to default when showing skills
@@ -39,17 +43,57 @@ const Skills: React.FC = () => {
     }, 300);
   };
 
-  const handleTextChange = (newTitle: string, newText: string, newColor: string) => {
+  const handleTextChange = (newTitle: string, newText: string, newColor: string, link: string | null) => {
     setTitleFading(true);
-    setTextFading(true); 
+    setTextFading(true);
     setTimeout(() => {
       setHoveredTitle(newTitle || "All field types");
       setHoveredColor(newColor || "#FFFFFF");
       setHoveredText(newText);
+      setActiveSkillLink(link || null);  // Set the active link for the secondary button
+      setActiveSkillColor(newColor || "#FFFFFF"); // Set the button color
       setTitleFading(false);
       setTextFading(false);
     }, 300);
   };
+
+  const useScreenSize = () => {
+    const [screenSize, setScreenSize] = useState({
+      isSmallScreen: false,
+      isMediumScreen: false,
+      isLargeScreen: false,
+    });
+  
+    useEffect(() => {
+      const handleResize = () => {
+        const width = window.innerWidth;
+        setScreenSize({
+          isSmallScreen: width < 640,
+          isMediumScreen: width >= 640 && width < 1024,
+          isLargeScreen: width >= 1024,
+        });
+      };
+  
+      window.addEventListener('resize', handleResize);
+      handleResize(); // Call initially to set the size
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+    return screenSize;
+  };
+
+  const screenSize = useScreenSize();
+
+  useEffect(() => {
+    // Detect screen resize and reset icons if going above xl screen size
+    if (screenSize.isLargeScreen) {
+      setActiveSkillLink(null); // Reset the active link
+      setActiveSkillColor(null); // Reset the active color
+    }
+  }, [screenSize.isLargeScreen]);
 
   return (
     <section
@@ -103,33 +147,49 @@ const Skills: React.FC = () => {
           </div>
         </div>
 
-        {/* Button to toggle skills display */}
-        <button
-          onClick={toggleSkills}
-          className={`${
-            showSkills
-              ? "bg-[#53b7e2] hover:bg-[#75D6FF] text-black"
-              : "bg-[#1260BC] hover:bg-blue-600 text-white"
-          } font-semibold lg:absolute bottom-0 w-[200px] py-5 rounded-md self-start transition duration-300 relative overflow-hidden`}
-        >
-          {/* Show Skills */}
-          <span
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-              showSkills ? "opacity-0 translate-y-full" : "opacity-100 translate-y-0"
-            }`}
+        {/* Buttons for icon links */}
+        <div className="flex flex-row items-center lg:items-end lg:absolute lg:bottom-0 space-x-4">
+          {/* Button to toggle skills display */}
+          <button
+            onClick={toggleSkills}
+            className={`${
+              showSkills
+                ? "bg-[#53b7e2] hover:bg-[#75D6FF] text-black"
+                : "bg-[#1260BC] hover:bg-blue-600 text-white"
+            } font-semibold w-[200px] py-5 rounded-md self-start transition duration-300 relative overflow-hidden`}
           >
-            Show skills
-          </span>
+            {/* Show Skills */}
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+                showSkills ? "opacity-0 translate-y-full" : "opacity-100 translate-y-0"
+              }`}
+            >
+              Show skills
+            </span>
 
-          {/* Hide Skills */}
-          <span
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-              showSkills ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
-            }`}
-          >
-            Hide skills
-          </span>
-        </button>
+            {/* Hide Skills */}
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+                showSkills ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
+              }`}
+            >
+              Hide skills
+            </span>
+          </button>
+
+          {/* Secondary Button for Small/Medium screens */}
+          {(activeSkillLink && (screenSize.isSmallScreen || screenSize.isMediumScreen || (screenSize.isLargeScreen && window.innerWidth < 1280))) && (
+            <a
+              href={activeSkillLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#53b7e2] hover:bg-[#75D6FF] text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center"
+              style={{ backgroundColor: activeSkillColor || "#53b7e2" }}
+            >
+              <LinkIcon />
+            </a>
+          )}
+        </div>
       </div>
 
       {/* Skills Div */}

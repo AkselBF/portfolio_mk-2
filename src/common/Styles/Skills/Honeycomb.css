@@ -50,7 +50,7 @@
 }
 
 .hexagon-icon {
-  width: 40px;
+  /*width: 40px;*/
   height: 40px;
   position: absolute; /* Position icons on top of each other */
   top: 20%;
@@ -80,7 +80,7 @@
   }
 
   .hexagon:hover .hexagon-icon {
-    width: 50px;
+    /*width: 50px;*/
     height: 50px;
   }
 }
