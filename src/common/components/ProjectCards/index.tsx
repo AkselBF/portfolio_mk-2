@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </style>
             </head>
             <body>
-              <img class="art-image" src="${project.imageUrl}" alt="${project.title}" />
+              <img class="art-image" src="${project.fullSizeImageUrl}" alt="${project.title}" />
               <div class="software-container">
                 <img class="software-logo" src="${project.softwareLogo}" alt="${project.software} icon" />
                 <div class="software-text">Made with ${project.software}</div>

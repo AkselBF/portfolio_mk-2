@@ -17,6 +17,8 @@ import logo_science_l from '../../assets/icons/science_logo_light.png';
 
 // For art projects
 import softwareLogo1 from '../../assets/icons/clip_icon.png';
+import lowerImage1 from '../../assets/images/castle_png_optimized.png';
+import lowerImage2 from '../../assets/images/beautiful_sunset_on_cliff_complete_png_optimized.png';
 import artImage1 from '../../assets/images/castle png.png';
 import artImage2 from '../../assets/images/beautiful sunset on cliff complete png.png';
 
@@ -39,6 +41,7 @@ export interface ArtProject {
   type: 'art';
   title: string;
   imageUrl: string;
+  fullSizeImageUrl: string;
   software: string;
   softwareLogo: string;
 }
@@ -50,7 +53,8 @@ export const projects: Project[] = [
     id: 7,
     type: 'art',
     title: 'Digital Painting',
-    imageUrl: artImage2,
+    imageUrl: lowerImage2,
+    fullSizeImageUrl: artImage2,
     software: 'Clip Studio Paint',
     softwareLogo: softwareLogo1,
   },
@@ -58,7 +62,8 @@ export const projects: Project[] = [
     id: 6,
     type: 'art',
     title: 'Illustration Design',
-    imageUrl: artImage1,
+    imageUrl: lowerImage1,
+    fullSizeImageUrl: artImage1,
     software: 'Clip Studio Paint',
     softwareLogo: softwareLogo1,
   },
