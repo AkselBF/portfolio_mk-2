@@ -53,15 +53,6 @@ const About: React.FC = () => {
           title="CV"
           className="w-full h-full"
         />
-        <div className="text-center mt-9">
-          <a
-            href="/pdf/CV - english version 2024.pdf"
-            download="Aksel_CV.pdf"
-            className="bg-[#1260BC] text-white px-12 py-2 rounded hover:bg-blue-600"
-          >
-            Download CV
-          </a>
-        </div>
       </Modal>
     </section>
   );

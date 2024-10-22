@@ -40,12 +40,37 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s; /* Add background transition */
+}
+
+.hexagon:hover {
+  background-color: #75d6ff00; /* Change background color when hovered */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  /*border: #75D6FF solid 3px;*/
 }
 
 .hexagon-icon {
-  width: 40px;
+  /*width: 40px;*/
   height: 40px;
-  color: #75D6FF;
+  position: absolute; /* Position icons on top of each other */
+  top: 20%;
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+.hexagon-icon.white-icon {
+  opacity: 1; /* White icon visible by default */
+}
+
+.hexagon-icon.colored-icon {
+  opacity: 0; /* Colored icon invisible by default */
+}
+
+.hexagon:hover .white-icon {
+  opacity: 0; /* Fade out white icon on hover */
+}
+
+.hexagon:hover .colored-icon {
+  opacity: 1; /* Fade in colored icon on hover */
 }
 
 /* Hover effect for icons */
@@ -55,13 +80,13 @@
   }
 
   .hexagon:hover .hexagon-icon {
-    width: 50px;
+    /*width: 50px;*/
     height: 50px;
   }
 }
 
 .hexagon-text {
-  margin-top: 8px;
+  margin-top: 42%;
   color: #ffffff;
   font-size: 14px;
   text-align: center;
@@ -90,4 +115,16 @@
 
 .skills-group:nth-child(even) .hexagon-wrapper:nth-child(1) {
   margin-bottom: 8px;
+}
+
+.hexagon-wrapper.active .hexagon {
+  background: transparent; /* Background becomes transparent when the icon is active */
+}
+
+.hexagon-active {
+  background: transparent; /* Transparent background when active */
+}
+
+.square-skill.active {
+  background: transparent; /* Transparent background when active in square grid */
 }

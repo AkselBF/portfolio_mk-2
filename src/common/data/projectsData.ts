@@ -1,3 +1,4 @@
+// For frontend projects
 import intro_holidaze from '../../assets/images/intro_holidaze_2.png';
 import logo_holidaze from '../../assets/icons/Holidaze_logo.png';
 import holidaze from '../../assets/images/holidaze.png';
@@ -14,9 +15,61 @@ import intro_science from '../../assets/images/intro_science.png';
 import science from '../../assets/images/museum_2.jpg';
 import logo_science_l from '../../assets/icons/science_logo_light.png';
 
-export const projects = [
+// For art projects
+import softwareLogo1 from '../../assets/icons/clip_icon.png';
+import lowerImage1 from '../../assets/images/castle_png_optimized.png';
+import lowerImage2 from '../../assets/images/beautiful_sunset_on_cliff_complete_png_optimized.png';
+import artImage1 from '../../assets/images/castle png.png';
+import artImage2 from '../../assets/images/beautiful sunset on cliff complete png.png';
+
+export interface FrontendProject {
+  id: number;
+  type: 'frontend';
+  title: string;
+  imageUrl: string;
+  appUrl: string;
+  githubUrl: string;
+  appLogo: string;
+  sideImage: string;
+  introduction: string;
+  description: string;
+  details: string;
+}
+
+export interface ArtProject {
+  id: number;
+  type: 'art';
+  title: string;
+  imageUrl: string;
+  fullSizeImageUrl: string;
+  software: string;
+  softwareLogo: string;
+}
+
+export type Project = FrontendProject | ArtProject;
+
+export const projects: Project[] = [
+  {
+    id: 7,
+    type: 'art',
+    title: 'Digital Painting',
+    imageUrl: lowerImage2,
+    fullSizeImageUrl: artImage2,
+    software: 'Clip Studio Paint',
+    softwareLogo: softwareLogo1,
+  },
+  {
+    id: 6,
+    type: 'art',
+    title: 'Illustration Design',
+    imageUrl: lowerImage1,
+    fullSizeImageUrl: artImage1,
+    software: 'Clip Studio Paint',
+    softwareLogo: softwareLogo1,
+  },
   {
     id: 5,
+    type: 'frontend',
     title: 'Holidaze',
     appUrl: 'https://heroic-capybara-f5b72b.netlify.app/',
     githubUrl: 'https://github.com/AkselBF/holidaze',
@@ -29,6 +82,7 @@ export const projects = [
   },
   {
     id: 4,
+    type: 'frontend',
     title: 'JS frameworks',
     appUrl: 'https://leafy-macaron-b29a6e.netlify.app/',
     githubUrl: 'https://github.com/AkselBF/js_frameworks_ca',
@@ -41,6 +95,7 @@ export const projects = [
   },
   {
     id: 3,
+    type: 'frontend',
     title: 'Day-Night Auction',
     appUrl: 'https://akselbf.github.io/Semester_Project_2/',
     githubUrl: 'https://github.com/AkselBF/Semester_Project_2',
@@ -53,6 +108,7 @@ export const projects = [
   },
   {
     id: 2,
+    type: 'frontend',
     title: 'Drop by drop',
     appUrl: 'https://hilarious-madeleine-1abb00.netlify.app/',
     githubUrl: 'https://github.com/AkselBF/project-exam-1-AkselBF',
@@ -65,6 +121,7 @@ export const projects = [
   },
   {
     id: 1,
+    type: 'frontend',
     title: 'Community Science Museum',
     appUrl: 'https://super-sherbet-88e920.netlify.app/',
     githubUrl: 'https://github.com/AkselBF/Community_Science_Museum',
